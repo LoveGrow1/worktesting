@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LoveGrow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- Add the Bootstrap Icons CSS file -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<style>
+  .jumbotron h1.display-4 {
+    font-size: 24px;
+  }
+
+  .jumbotron p.lead {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .btn i {
+    margin-right: 5px;
+  }
+
+  .btn-group-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    max-width: 30%;
+    height: auto;
+  }
+</style>
+<script type="text/javascript">
+  function checkPassword() {
+    if (sessionStorage.getItem("authenticated") === "true") {
+      document.getElementById('protectedContent').style.display = 'block';
+    } else {
+      var password = prompt("Please enter password to view this page", "");
+      if (password == "1234") {
+        document.getElementById('protectedContent').style.display = 'block';
+        sessionStorage.setItem("authenticated", "true");
+      } else {
+        alert("Incorrect password. Please try again.")
+      }
+    }
+  }
+</script>
+</head>
+<body onload="checkPassword()">
+<div id="protectedContent" style="display:none">
+<div class="container">
+  <div class="jumbotron text-center">
+    <img src="Logo LG.png" alt="LoveGrow Logo" class="logo">
+    <p class="lead">Welcome, 12345678M!</p>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="btn-group-vertical btn-group-center">
+        <a href="1.html" class="btn btn-primary btn-lg btn-block"><i class="bi bi-award-fill"></i>Strengths</a>
+        <a href="2.html" class="btn btn-primary btn-lg btn-block"><i class="bi bi-tools"></i>Areas for Improvement</a>
+        <a href="3.html" class="btn btn-primary btn-lg btn-block"><i class="bi bi-lightbulb-fill"></i>Unseen Needs of your partner</a>
+        <a href="4.html" class="btn btn-primary btn-lg btn-block"><i class="bi bi-people-fill"></i>Comparison with Other Couples</a>
+        <a href="actions.html" class="btn btn-primary btn-lg btn-block"><i class="bi bi-check-circle-fill"></i>Action Recommendations</a>
+        <a href="alignment.html" class="btn btn-primary btn-lg btn-block"><i class="bi bi-graph-up"></i>Couple's Alignment</a>
+        <a href="question.html" class="btn btn-primary btn-lg btn-block"><i class="bi bi-chat-dots-fill"></i>Question to Ask</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
